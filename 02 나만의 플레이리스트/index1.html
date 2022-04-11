@@ -5,7 +5,9 @@
         <title>박상아의 플레이리스트</title>
         <style>
             ol.a {display: table; margin-left: auto; margin-right: auto;}
-          </style>
+            a { text-decoration:none; color:inherit }
+            a:hover {color:green}
+        </style>
     </head>
     <body>
         <div style="text-align:center">
@@ -24,14 +26,14 @@
         </ol>
         <br>
         <div style="text-align:center">
-            <p><b>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</b></p>
+            <p><b>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</b></p>
             <p><b>⁕ 당신의 곡을 추천해주세요 ⁕</b></p>
             <p>♪ 제목 : <input type="text"></p>
             <p>♪ 가수 : <input type="text"></p>
             <p>♪ 추천이유를 적고 제출해주세요</p>
             <form>
                 <p><textarea placeholder="이 곡을 추천하는 이유는..." cols="32" rows="10"></textarea></p>
-                <button type="button" class="navyBtn" onClick="location.href='index2.html'">제출</button>
+                <button type="button"><a href="index2.html">제출</a></button>
             </form>
         </div>
     </body>
