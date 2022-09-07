@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="ko">
+    <head>
+        <meta charset ="UTF-8">
+        <title>기념일 계산기</title>
+        <link rel = "stylesheet" href = "4기념일계산.css">
+    </head>
+    <body>
+        <div>
+            <h1>상아❤️코딩</h1>
+            <h2 id="love">0일째</h2>
+            <h3 class="date">2022.8.30</h3>
+        </div>
+        <div>
+            <p>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</p>
+            <h3>발렌타인 데이</h3>
+            <p id="valentine">0일 남음</p>
+            <p>2023.2.14</p>
+        </div>
+        <div>
+            <p>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</p>
+            <h3>1000일</h3>
+            <p id="thousand">0일 남음</p>
+            <p id="thousand-date">0000.00.00</p>
+        </div>
+        <script 
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+            crossorigin="anonymous">
+        </script>
+        <script>
+            var now = new Date();
+            var start = new Date("2022-08-30");
+            var timeDiff = now.getTime() - start.getTime();
+            var day = Math.floor(timeDiff / (1000*60*60*24) + 1);
+            $("#love").text(day+"일째")
+
+            var valentine = new Date("2023-02-14");
+            var timeDiff2 = valentine.getTime() - now.getTime();
+            var day2 = Math.floor(timeDiff2 / (1000*60*60*24) + 1);
+            $("#valentine").text(day2+"일 남음")
+
+            var ms = start.getTime() + 999*(1000*60*60*24);
+            var thousand = new Date(ms)
+            var thousandDate = thousand.getFullYear() + "." + (thousand.getMonth()+1) + "." + thousand.getDate();
+            // var timeDiff3 = thousand.getTime() - now.getTime();
+            // var day3 = Math.floor(timeDiff3 / (1000*60*60*24) + 1);
+            var day3 = 1000 - day;
+            $("#thousand").text(day3+"일 남음")
+            $("#thousand-date").text(thousandDate)
+        </script>
+    </body>
+</html>

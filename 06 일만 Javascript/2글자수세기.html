@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset ="UTF-8">
+        <title>자소서 글자수 세기</title>
+    </head>
+    <body>
+        <h1>자소서</h1>
+        <textarea rows="3" id="text" onkeydown="counter();"></textarea>
+        <span id="count">(0/200)</span>
+        <script>
+            function counter() {
+                var content = document.getElementById("text").value;
+                if (content.length > 200) {
+                    content = content.substring(0,200);
+                    document.getElementById("text").value = content;
+                }
+                document.getElementById("count").innerHTML = "(" + content.length + "/200)";
+            }
+        </script>
+    </body>
+</html>

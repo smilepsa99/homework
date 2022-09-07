@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>미니 스타크래프트</title>
+        <link rel="stylesheet" href="3미니스타.css">
+    </head>
+    <body>
+        <h1>Click the red one</h1>
+        <h2>HP: 3</h2>
+        <div class="background">
+            <img id="drone" src="drone.png">
+            <img id="spit" src="spit.png">
+            <img id="bunker" src="bunker.png">
+        </div>
+        <button onClick="window.location.reload()">Try again</button>
+        <script 
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous">
+        </script>
+        <script src="//code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            var hp = 3;
+            $("#drone").click(function(){
+                $("#spit").fadeIn();
+                var audio = new Audio("Laser.mp3");
+                audio.play();
+                $("#spit").animate({left: "+=420" },function(){
+                    $("#bunker").effect("shake", {distance:3}, 300);}
+                    );
+                $("#spit").fadeOut(function(){
+                    hp = hp - 1;
+                    $("h2").text("HP: " + hp);
+                    if(hp <= 0) {
+                        $("#bunker").fadeOut();
+                        $("h2").text("Clear!");
+                        $("button").fadeIn();
+                        var audio = new Audio("Clear.mp3");
+                        audio.play();
+                    }
+                });
+                $("#spit").css({left: "80px"});
+            });
+        </script>
+    </body>
+</html>
+
